@@ -1,5 +1,6 @@
 from database import db
 
+
 class Meal(db.Model):
     
     # id, nome, descrição, horário da refeição, refeição na dieta ou não.
@@ -9,4 +10,6 @@ class Meal(db.Model):
     date_time_meal = db.Column(db.DateTime)
     hour_meal = db.Column(db.DateTime(), default=db.func.now(), nullable=False)
     meal_on_diet = db.Column(db.Boolean, default=False)
+    user = db.relationship('User', backref='user')
+    
 
