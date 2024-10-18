@@ -9,6 +9,4 @@ class Meal(db.Model):
     meal_time = db.Column(db.DateTime)
     hour_meal = db.Column(db.DateTime(), default=db.func.now(), nullable=False)
     on_diet = db.Column(db.Boolean, default=False)
-    user = db.relationship('User', backref='user')
-    
-
+  
